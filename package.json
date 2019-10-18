@@ -1,8 +1,8 @@
 {
-    "name": "the-module",
+    "name": "secure-chance",
     "version": "0.0.0",
-    "description": "My awesome module.",
-    "repository": "https://github.com/Richienb/node-module-boilerplate.git",
+    "description": "Chancejs with a truly random seed.",
+    "repository": "https://github.com/Richienb/secure-chance.git",
     "author": "Richie Bendall <richiebendall@gmail.com>",
     "license": "MIT",
     "main": "index.js",
@@ -10,7 +10,7 @@
         "index.js"
     ],
     "engines": {
-        "node": ">=10"
+        "node": ">=8"
     },
     "scripts": {
         "lint": "eslint .",

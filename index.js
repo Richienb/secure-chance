@@ -4,6 +4,7 @@ const { Chance } = require("chance")
 const fetch = require("cross-fetch")
 const { Random, nativeMath, browserCrypto, nodeCrypto } = require("random-js")
 const { isBrowser, isNode } = require("browser-or-node")
+const { URLSearchParams } = require("url")
 
 // OFFLINE: Get crypto strategy
 let gen
