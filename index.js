@@ -4,7 +4,7 @@ const { Chance } = require("chance")
 const fetch = require("cross-fetch")
 const { Random, nativeMath, browserCrypto, nodeCrypto } = require("random-js")
 const { isBrowser, isNode } = require("browser-or-node")
-const { URLSearchParams } = require("url")
+const { stringify: encodeQueryString } = require("query-string")
 
 // OFFLINE: Get crypto strategy
 let gen
@@ -16,8 +16,8 @@ else gen = nativeMath
 const num = new Random(gen).integer(-0x20000000000000, 0x20000000000000)
 let randomizer = new Chance(num)
 
-// ONLINE: Set query parameters
-const randomOrgParams = {
+// ONLINE: Get randomizer seed
+fetch(`https://www.random.org/integers/?${encodeQueryString({
     num: 1,
     col: 1,
     min: 1,
@@ -25,10 +25,7 @@ const randomOrgParams = {
     base: 10,
     format: "plain",
     rnd: "new",
-}
-
-// ONLINE: Get randomizer seed
-fetch(`https://www.random.org/integers/?${new URLSearchParams(randomOrgParams).toString()}`)
+})}`)
     .then((res) => res.text())
     .then((res) => randomizer = new Chance(res))
     .catch(() => { })
