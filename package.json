@@ -1,6 +1,6 @@
 {
     "name": "secure-chance",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Chancejs with a truly random seed.",
     "repository": "https://github.com/Richienb/secure-chance.git",
     "author": "Richie Bendall <richiebendall@gmail.com>",
