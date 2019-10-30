@@ -38,6 +38,6 @@
         "extends": "richienb"
     },
     "peerDependencies": {
-        "chance": ">=1"
+        "chance": "*"
     }
 }
