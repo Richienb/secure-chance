@@ -1,3 +1,3 @@
-import { Chance } from "chance"
+import Chance from "chance"
 
 export = new Chance;

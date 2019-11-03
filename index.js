@@ -5,6 +5,9 @@ const fetch = require("cross-fetch")
 const { Random, nativeMath, browserCrypto, nodeCrypto } = require("random-js")
 const { isBrowser, isNode } = require("browser-or-node")
 const { stringify: encodeQueryString } = require("query-string")
+const Mutatable = require("mutatable")
+
+const randomizer = new Mutatable()
 
 // OFFLINE: Get crypto strategy
 let gen
@@ -14,7 +17,7 @@ else gen = nativeMath
 
 // OFFLINE: Create generator
 const num = new Random(gen).integer(-0x20000000000000, 0x20000000000000)
-let randomizer = new Chance(num)
+randomizer.exportable = new Chance(num)
 
 // ONLINE: Get randomizer seed
 fetch(`https://www.random.org/integers/?${encodeQueryString({
@@ -27,14 +30,8 @@ fetch(`https://www.random.org/integers/?${encodeQueryString({
     rnd: "new",
 })}`)
     .then((res) => res.text())
-    .then((res) => randomizer = new Chance(res))
+    .then((res) => randomizer.exportable = new Chance(res))
     .catch(() => { })
 
 // Export object
-const RANDSYMBOL = Symbol("RANDSYMBOL")
-Object.defineProperty(global, RANDSYMBOL, {
-    get: () => randomizer,
-    enumerable: true,
-    configurable: true,
-})
-module.exports = global[RANDSYMBOL]
+module.exports = randomizer.exportable
