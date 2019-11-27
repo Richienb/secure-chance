@@ -2951,9 +2951,9 @@ rc@^1.2.8:
     strip-json-comments "~2.0.1"
 
 rdo@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/rdo/-/rdo-1.0.0.tgz#b58d91bb4e803d117b5d93bb904f6a61ca0b6ffa"
-  integrity sha512-U7SFnHdKiu7WQ8ykn5Q0sLiAyE4J7+aLTl2B1+TPRWzefcy0s3ylAcvPAjfOEUf1F6DCHUk/mj7zGa3kIhQc9g==
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/rdo/-/rdo-1.0.1.tgz#1b1a659158013ae1f4bdba662722c39311996336"
+  integrity sha512-AKG1wEgNonj1Fh6pjnukOgccIRkXW7DqNugq5cg09GybipNal5fLO42WXakExfWzsXxn3BQKbn0GPwrOd8qdag==
   dependencies:
     atob "^2.1.2"
     cross-blob "^1.1.0"
