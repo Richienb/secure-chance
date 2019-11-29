@@ -1,5 +1,3 @@
-"use strict"
-
 const Chance = require("chance")
 const { Random, nativeMath, browserCrypto, nodeCrypto } = require("random-js")
 const envCrosser = require("env-crosser")
