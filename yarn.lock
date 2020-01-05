@@ -1609,6 +1609,11 @@ flatted@^2.0.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-2.0.1.tgz#69e57caa8f0eacbc281d2e2cb458d46fdb449e08"
   integrity sha512-a1hQMktqW9Nmqr5aktAux3JMNqaucxGcjtjWnZLHX7yyPCmlSV3M54nGYbqT8K+0GhF3NBgmJCc3ma+WOgX8Jg==
 
+for-range@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/for-range/-/for-range-1.0.0.tgz#5d054a6ffa7a2e949e5cd9217d10f95aa0d2d879"
+  integrity sha512-gjQrUxx/iTkNuAvC2CIOUMvNblku8OER2Vq6sFmWFwr0jj+o1Rv0Qlou4P+kZWjVUfBgPfB48NlEmOGtywM8dQ==
+
 fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
@@ -2951,20 +2956,20 @@ rc@^1.2.8:
     strip-json-comments "~2.0.1"
 
 rdo@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/rdo/-/rdo-1.0.1.tgz#1b1a659158013ae1f4bdba662722c39311996336"
-  integrity sha512-AKG1wEgNonj1Fh6pjnukOgccIRkXW7DqNugq5cg09GybipNal5fLO42WXakExfWzsXxn3BQKbn0GPwrOd8qdag==
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/rdo/-/rdo-1.0.2.tgz#4daf7bc57b30af3eca0ad7701b9240c84e7b6573"
+  integrity sha512-o1ZFktyhzrYB/hMMUIrkTmCCdcekb9CgfJ7h+Y5GalFj3U9AViySJunhNr4InKgtMluoDPoQSyYXips9soo+lA==
   dependencies:
     atob "^2.1.2"
     cross-blob "^1.1.0"
     english-chars "^1.0.1"
+    for-range "^1.0.0"
     is-uuid "^1.0.2"
     ky "^0.16.0"
     ky-universal "^0.3.0"
     lodash "^4.17.15"
     md5 "^2.2.1"
     put-after "^1.0.1"
-    tslib "^1.10.0"
 
 read-pkg-up@^2.0.0:
   version "2.0.0"
@@ -3532,7 +3537,7 @@ trim-right@^1.0.1:
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
   integrity sha1-yy4SAwZ+DI3h9hQJS5/kVwTqYAM=
 
-tslib@^1.10.0, tslib@^1.8.1, tslib@^1.9.0:
+tslib@^1.8.1, tslib@^1.9.0:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
   integrity sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
