@@ -7,7 +7,7 @@ const STATE_SPACE = 19937
 
 const randomSeed = async () => {
 	try {
-		return await quantumRandom({size: STATE_SPACE})
+		return await quantumRandom({ size: STATE_SPACE })
 	} catch {
 		return secureRandom()
 	}
