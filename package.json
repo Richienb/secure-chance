@@ -1,43 +1,44 @@
 {
-    "name": "secure-chance",
-    "version": "1.1.1",
-    "description": "Chancejs with a truly random seed.",
-    "repository": "https://github.com/Richienb/secure-chance.git",
-    "author": "Richie Bendall <richiebendall@gmail.com>",
-    "license": "MIT",
-    "main": "index.js",
-    "files": [
-        "index.js",
-        "index.d.ts"
-    ],
-    "engines": {
-        "node": ">=6"
-    },
-    "scripts": {
-        "lint": "eslint .",
-        "test": "yarn lint && ava"
-    },
-    "keywords": [
-        "chance",
-        "secure",
-        "crypto"
-    ],
-    "dependencies": {
-        "env-crosser": "^1.0.0",
-        "mutatable": "^1.0.0",
-        "random-js": "^2.1.0",
-        "rdo": "^1.0.0"
-    },
-    "devDependencies": {
-        "ava": "^2.4.0",
-        "chance": "^1.1.3",
-        "eslint": "^6.6.0",
-        "eslint-config-richienb": "^0.2.2"
-    },
-    "eslintConfig": {
-        "extends": "richienb"
-    },
-    "peerDependencies": {
-        "chance": "*"
-    }
+	"name": "secure-chance",
+	"version": "1.1.1",
+	"description": "Create an instance of Chance with a truly random seed.",
+	"repository": "https://github.com/Richienb/secure-chance.git",
+	"author": "Richie Bendall <richiebendall@gmail.com>",
+	"license": "MIT",
+	"main": "index.js",
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"engines": {
+		"node": ">=10.17"
+	},
+	"scripts": {
+		"lint": "xo",
+		"test": "xo && ava"
+	},
+	"keywords": [
+		"chance",
+		"secure",
+		"crypto",
+		"quantum",
+		"math",
+		"random"
+	],
+	"dependencies": {
+		"math-random": "^2.0.1",
+		"quantum-random": "^1.0.0"
+	},
+	"devDependencies": {
+		"ava": "^3.13.0",
+		"chance": "^1.1.7",
+		"eslint-config-richienb": "^0.5.0",
+		"xo": "^0.33.1"
+	},
+	"peerDependencies": {
+		"chance": "*"
+	},
+	"xo": {
+		"extends": "richienb"
+	}
 }

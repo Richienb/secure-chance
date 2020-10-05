@@ -1,32 +1,16 @@
+const quantumRandom = require("quantum-random")
+const secureRandom = require("math-random")
 const Chance = require("chance")
-const { Random, nativeMath, browserCrypto, nodeCrypto } = require("random-js")
-const envCrosser = require("env-crosser")
-const Mutatable = require("mutatable")
-const Rdo = require("rdo")
 
-const rnd = new Rdo()
-const randomizer = new Mutatable()
+// State space of a Mersenne Twister, the pseudorandom algorithm used by chance. See https://stackoverflow.com/a/24072187/8384910
+const STATE_SPACE = 19937
 
-// OFFLINE: Get crypto strategy
-const browCrypt = window && window.crypto ? browserCrypto : undefined
-const gen = envCrosser({
-    node: nodeCrypto,
-    browser: browCrypt,
-    worker: browCrypt,
-    fallback: nativeMath,
-})
+const randomSeed = async () => {
+	try {
+		return await quantumRandom({size: STATE_SPACE})
+	} catch {
+		return secureRandom()
+	}
+}
 
-// OFFLINE: Create generator
-const num = new Random(gen).integer(-0x20000000000000, 0x20000000000000)
-randomizer.exportable = new Chance(num)
-
-// ONLINE: Get randomizer seed
-rnd.integer({
-    min: -1e9,
-    max: 1e9,
-})
-    .then((res) => randomizer.exportable = new Chance(res))
-    .catch(() => { })
-
-// Export object
-module.exports = randomizer.exportable
+module.exports = async () => new Chance(await randomSeed())

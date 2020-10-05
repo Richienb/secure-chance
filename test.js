@@ -1,6 +1,7 @@
-import test from "ava"
-import chance from "."
+const test = require("ava")
+const secureChance = require(".")
 
-test("main", (t) => {
-    t.truthy(chance.integer)
+test("main", async t => {
+	const chance = await secureChance()
+	t.is(typeof chance.integer(), "number")
 })
