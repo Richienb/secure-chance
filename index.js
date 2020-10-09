@@ -9,7 +9,7 @@ const randomSeed = async () => {
 	try {
 		return await quantumRandom({ size: STATE_SPACE })
 	} catch {
-		return secureRandom()
+		return Math.floor(secureRandom() * (10 ** 13))
 	}
 }
 
